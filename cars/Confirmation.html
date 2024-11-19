@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roamify Service</title>
+    <link rel="stylesheet" href="css/cars.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1>Roamify Service</h1>
+            <p>Your premium choice for airport transfers and city rides.</p>
+        </div>
+    </header>
+
+    <!-- Booking Form Section -->
+    <section class="booking-form-section">
+        <div class="container">
+            <h2>Book Your Ride</h2>
+            <form action="#" method="POST" class="booking-form" onsubmit="checkTouristAccount(event)">
+                <div class="form-group">
+                  <label for="touristEmail">Confirm Email</label>
+                  <input type="email" id="touristEmail" name="touristEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                  <label for="touristPassword">Confirm Password</label>
+                  <input type="password" id="touristPassword" name="touristPassword" placeholder="Enter your password">
+                </div>
+                <div class="form-group">
+                  <label for="date">Starting Date</label>
+                  <input type="date" id="date" name="date" required>
+                </div>
+                <button type="submit" class="btn-submit">Book Now</button>
+              </form>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+</html>

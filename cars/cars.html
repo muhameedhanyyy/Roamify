@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Rental Service</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/cars.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="border-bottom:solid 2px brown ;">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <a href="../index.html"> <img class="logo" src="../imgs/Logo.jpg" /></a>  
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent ">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="../Egypt/resto.html">Tours</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="Mohamed.html">My Profile</a>
+            </li>
+
+            <li
+              class="nav-item"
+              style="
+                width: 50px;
+                margin: auto;
+                color: black;
+                padding-left: 10px;
+              "
+            >
+              <a href="cart.html"
+                ><i style="color: black" class="fa-solid fa-cart-shopping"></i
+              ></a>
+            </li>
+
+            <!-- <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Car Rental Section -->
+    <section class="car-rental-section py-5">
+      <div class="container">
+        <h5 class="text-center mb-4">Available Cars for Rent</h5>
+        <hr />
+
+        <div class="row g-4">
+          <!-- BMW Car Section -->
+          <h1 class="text-center">
+            BMW Cars
+          </h1>
+          <!-- First Car Card -->
+          <div class="col-md-4 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/bmwx6.jpeg"
+                class="card-img-top"
+                alt="BMW X6"
+              />
+              <div class="card-body">
+                <h5 class="card-title">BMW X6</h5>
+                <p class="card-text text-muted">Showroom: Luxury Rides</p>
+                <p class="card-text"><strong>Price per day: $100</strong></p>
+                <p class="card-text">
+                  The BMW X6 is a luxury SUV that combines practicality and
+                  performance with a bold design and premium technology.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-bmw-1', 'price-bmw-1', 100)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-bmw-1"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-bmw-1', 'price-bmw-1', 100)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-bmw-1">$100</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('BMW X6', 100, 'duration-bmw-1', 'carsImages/bmwx6.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Car Card -->
+          <div class="col-md-4 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/bmwcoupe.jpeg"
+                class="card-img-top"
+                alt="BMW Coupe"
+              />
+              <div class="card-body">
+                <h5 class="card-title">BMW Coupe</h5>
+                <p class="card-text text-muted">Showroom: Premium Motors</p>
+                <p class="card-text"><strong>Price per day: $120</strong></p>
+                <p class="card-text">
+                  The BMW Coupe blends elegance with sportiness, featuring a
+                  luxurious interior and cutting-edge technology for a thrilling
+                  drive.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-bmw-2', 'price-bmw-2', 120)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-bmw-2"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-bmw-2', 'price-bmw-2', 120)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-bmw-2">$120</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('BMW Coupe', 120, 'duration-bmw-2', 'carsImages/bmwcoupe.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Car Card -->
+          <div class="col-md-4 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/bmw340i.jpeg"
+                class="card-img-top"
+                alt="BMW 340i"
+              />
+              <div class="card-body">
+                <h5 class="card-title">BMW 340i</h5>
+                <p class="card-text text-muted">Showroom: Elite Cars</p>
+                <p class="card-text"><strong>Price per day: $150</strong></p>
+                <p class="card-text">
+                  The BMW 340i offers an exhilarating driving experience with
+                  powerful performance and a spacious, tech-filled interior.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-bmw-3', 'price-bmw-3', 150)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-bmw-3"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-bmw-3', 'price-bmw-3', 150)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-bmw-3">$150</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('BMW 340i', 150, 'duration-bmw-3', 'carsImages/bmw340i.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mercedes row g-4">
+          <h1 class="text-center">
+            Mercedes Cars
+          </h1>
+
+          <!-- First Car Card -->
+          <div class="col-md-4 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/amgc63.jpeg"
+                class="card-img-top"
+                alt="Mercedes-AMG C63"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mercedes-AMG C63</h5>
+                <p class="card-text text-muted">Showroom: Luxury Rides</p>
+                <p class="card-text"><strong>Price per day: $100</strong></p>
+                <p class="card-text">
+                  The Mercedes-AMG C63 combines power and elegance, featuring a
+                  handcrafted V8 engine and a luxurious interior for an
+                  exhilarating drive.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-mercedes-1', 'price-mercedes-1', 100)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-mercedes-1"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-mercedes-1', 'price-mercedes-1', 100)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-mercedes-1">$100</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Mercedes-AMG C63', 100, 'duration-mercedes-1', 'carsImages/amgc63.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Car Card -->
+          <div class="col-md-4 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/benzSUV.jpeg"
+                class="card-img-top"
+                alt="Mercedes-Benz GLC SUV"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mercedes-Benz GLC SUV</h5>
+                <p class="card-text text-muted">Showroom: Premium Motors</p>
+                <p class="card-text"><strong>Price per day: $120</strong></p>
+                <p class="card-text">
+                  The Mercedes-Benz GLC SUV offers luxury and versatility with a
+                  spacious interior, advanced safety features, and a powerful
+                  engine.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-mercedes-2', 'price-mercedes-2', 120)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-mercedes-2"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-mercedes-2', 'price-mercedes-2', 120)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-mercedes-2">$120</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Mercedes-Benz GLC SUV', 120, 'duration-mercedes-2', 'carsImages/benzSUV.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Car Card -->
+          <div class="col-md-4 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/g-class.jpeg"
+                class="card-img-top"
+                alt="Mercedes-Benz G-Class"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mercedes-Benz G-Class</h5>
+                <p class="card-text text-muted">Showroom: Elite Cars</p>
+                <p class="card-text"><strong>Price per day: $150</strong></p>
+                <p class="card-text">
+                  The Mercedes-Benz G-Class is an iconic luxury SUV, offering
+                  rugged design and lavish features for an unforgettable driving
+                  experience.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-mercedes-3', 'price-mercedes-3', 150)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-mercedes-3"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-mercedes-3', 'price-mercedes-3', 150)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-mercedes-3">$150</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Mercedes-Benz G-Class', 150, 'duration-mercedes-3', 'carsImages/g-class.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="toyota row g-4">
+          <h1 class="text-center">
+            Toyota Cars
+          </h1>
+
+          <!-- First Car Card -->
+          <div class="col-md-4 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/toyotacorolla.jpeg"
+                class="card-img-top"
+                alt="Toyota Camry"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Toyota Camry</h5>
+                <p class="card-text text-muted">Showroom: Premium Rides</p>
+                <p class="card-text"><strong>Price per day: $90</strong></p>
+                <p class="card-text">
+                  A sleek sedan with great fuel efficiency, comfortable seating,
+                  and reliable performance.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-toyota-1', 'price-toyota-1', 90)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-toyota-1"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-toyota-1', 'price-toyota-1', 90)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-toyota-1">$90</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Toyota Camry', 90, 'duration-toyota-1', 'carsImages/toyotacorolla.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Car Card -->
+          <div class="col-md-4 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/corolla2015.jpeg"
+                class="card-img-top"
+                alt="Toyota Corolla"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Toyota Corolla</h5>
+                <p class="card-text text-muted">Showroom: City Motors</p>
+                <p class="card-text"><strong>Price per day: $80</strong></p>
+                <p class="card-text">
+                  The Toyota Corolla is a compact car known for its
+                  affordability, reliability, and excellent fuel economy.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-toyota-2', 'price-toyota-2', 80)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-toyota-2"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-toyota-2', 'price-toyota-2', 80)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-toyota-2">$80</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Toyota Corolla', 80, 'duration-toyota-2', 'carsImages/corolla2015.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Car Card -->
+          <div class="col-md-4 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/toyota.jpeg"
+                class="card-img-top"
+                alt="Toyota RAV4"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Toyota RAV4</h5>
+                <p class="card-text text-muted">Showroom: Adventure Rides</p>
+                <p class="card-text"><strong>Price per day: $110</strong></p>
+                <p class="card-text">
+                  The Toyota RAV4 is a versatile compact SUV with a spacious
+                  interior and a reputation for durability.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-toyota-3', 'price-toyota-3', 110)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-toyota-3"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-toyota-3', 'price-toyota-3', 110)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-toyota-3">$110</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Toyota RAV4', 110, 'duration-toyota-3', 'carsImages/toyota.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hyundai row g-3">
+          <h1 class="text-center">
+            Hyundai Cars
+          </h1>
+
+          <!-- First Car Card -->
+          <div class="col-md-3 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/elantra2015.jpeg"
+                class="card-img-top"
+                alt="Hyundai Elantra"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyundai Elantra</h5>
+                <p class="card-text text-muted">Showroom: City Motors</p>
+                <p class="card-text"><strong>Price per day: $85</strong></p>
+                <p class="card-text">
+                  The Hyundai Elantra offers a smooth ride, great fuel
+                  efficiency, and modern features in a compact sedan.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-hyundai-1', 'price-hyundai-1', 85)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-hyundai-1"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-hyundai-1', 'price-hyundai-1', 85)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-hyundai-1">$85</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Hyundai Elantra', 85, 'duration-hyundai-1', 'carsImages/elantra2015.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Car Card -->
+          <div class="col-md-3 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/tucson.jpeg"
+                class="card-img-top"
+                alt="Hyundai Tucson"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyundai Tucson</h5>
+                <p class="card-text text-muted">Showroom: Adventure Rides</p>
+                <p class="card-text"><strong>Price per day: $110</strong></p>
+                <p class="card-text">
+                  The Hyundai Tucson is a comfortable and spacious SUV with
+                  advanced safety features and a smooth drive.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-hyundai-2', 'price-hyundai-2', 110)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-hyundai-2"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-hyundai-2', 'price-hyundai-2', 110)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-hyundai-2">$110</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Hyundai Tucson', 110, 'duration-hyundai-2', 'carsImages/tucson.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Car Card -->
+          <div class="col-md-3 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/newelantra.jpeg"
+                class="card-img-top"
+                alt="Hyundai Santa Fe"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyundai Santa Fe</h5>
+                <p class="card-text text-muted">Showroom: Luxury Rides</p>
+                <p class="card-text"><strong>Price per day: $125</strong></p>
+                <p class="card-text">
+                  The Hyundai Santa Fe is a midsize SUV offering spacious
+                  seating and a host of modern tech features.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-hyundai-3', 'price-hyundai-3', 125)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-hyundai-3"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-hyundai-3', 'price-hyundai-3', 125)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-hyundai-3">$125</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Hyundai Santa Fe', 125, 'duration-hyundai-3', 'carsImages/newelantra.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fourth Car Card -->
+          <div class="col-md-3 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/tucson2018.jpeg"
+                class="card-img-top"
+                alt="Hyundai Tucson"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Hyundai Tucson</h5>
+                <p class="card-text text-muted">Showroom: Adventure Rides</p>
+                <p class="card-text"><strong>Price per day: $110</strong></p>
+                <p class="card-text">
+                  The Hyundai Tucson is a comfortable and spacious SUV with
+                  advanced safety features and a smooth drive.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-hyundai-4', 'price-hyundai-4', 110)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-hyundai-4"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-hyundai-4', 'price-hyundai-4', 110)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-hyundai-4">$110</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Hyundai Tucson', 110, 'duration-hyundai-4', 'carsImages/tucson2018.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="honda row g-4">
+          <h1 class="text-center">
+            Honda Cars
+          </h1>
+
+          <!-- First Car Card -->
+          <div class="col-md-4 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/civic.jpeg"
+                class="card-img-top"
+                alt="Honda Civic"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Honda Civic</h5>
+                <p class="card-text text-muted">Showroom: City Motors</p>
+                <p class="card-text"><strong>Price per day: $85</strong></p>
+                <p class="card-text">
+                  The Honda Civic offers a sporty feel, great fuel efficiency,
+                  and a comfortable ride for everyday driving.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-honda-1', 'price-honda-1', 85)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-honda-1"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-honda-1', 'price-honda-1', 85)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-honda-1">$85</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Honda Civic', 85, 'duration-honda-1', 'carsImages/civic.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Car Card -->
+          <div class="col-md-4 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/honda.jpeg"
+                class="card-img-top"
+                alt="Honda CR-V"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Honda CR-V</h5>
+                <p class="card-text text-muted">Showroom: Adventure Rides</p>
+                <p class="card-text"><strong>Price per day: $115</strong></p>
+                <p class="card-text">
+                  The Honda CR-V is a compact SUV with a spacious cabin, high
+                  safety ratings, and impressive tech features.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-honda-2', 'price-honda-2', 115)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-honda-2"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-honda-2', 'price-honda-2', 115)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-honda-2">$115</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Honda CR-V', 115, 'duration-honda-2', 'carsImages/honda.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Third Car Card -->
+          <div class="col-md-4 carCard">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="carsImages/hondacivic.jpeg"
+                class="card-img-top"
+                alt="Honda Pilot"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Honda Pilot</h5>
+                <p class="card-text text-muted">Showroom: Premium Motors</p>
+                <p class="card-text"><strong>Price per day: $140</strong></p>
+                <p class="card-text">
+                  The Honda Pilot is a family-friendly SUV with ample space,
+                  advanced tech, and excellent safety features.
+                </p>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-3"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(-1, 'duration-honda-3', 'price-honda-3', 140)"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="number"
+                    id="duration-honda-3"
+                    class="form-control text-center mx-2"
+                    value="1"
+                    min="1"
+                    readonly
+                    style="width: 60px"
+                  />
+                  <button
+                    class="btn btn-outline-secondary"
+                    onclick="changeDuration(1, 'duration-honda-3', 'price-honda-3', 140)"
+                  >
+                    +
+                  </button>
+                </div>
+                <p>Total Price: <span id="price-honda-3">$140</span></p>
+                <button
+                  class="btn btn-primary w-100"
+                  onclick="addToCart('Honda Pilot', 140, 'duration-honda-3', 'carsImages/hondacivic.jpeg')"
+                >
+                  Rent Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap JS (for interactive components, optional) -->
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
