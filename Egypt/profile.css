@@ -1,0 +1,248 @@
+:root {
+    --beige: #f5f0e1;
+    --dark-brown: #5e4429;
+    --light-brown: #c0a27e;
+    --primary-bg: #f3e9dd; 
+    --secondary-bg: #d1bfa6; 
+    --text-color: #5f4b32; 
+    --highlight-color: #a68b73; 
+    --icon-bg: #bca18a;
+    --icon-hover: #8d6e57; 
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--primary-bg);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.navbar {
+    background-color: var(--beige);
+    border-bottom: 2px solid var(--light-brown);
+    color: var(--dark-brown);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    margin: 0; /* Remove any margin */
+    padding: 0.5rem 1rem; /* Adjust padding for spacing */
+}
+.navbar img{
+    border-radius: 50%;
+}
+
+.navbar .nav-link {
+    color: var(--dark-brown);
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: var(--light-brown);
+}
+
+.navbar .dropdown-menu {
+    background-color: var(--beige);
+    border: 1px solid var(--light-brown);
+}
+
+.navbar .dropdown-item {
+    color: var(--dark-brown);
+    transition: background-color 0.3s;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: var(--light-brown);
+    color: var(--beige);
+}
+
+.navbar .logo {
+    height: 40px;
+    margin-right: 15px;
+}
+
+.navbar-toggler {
+    border-color: var(--light-brown);
+}
+
+.navbar-toggler-icon {
+    background-color: var(--dark-brown);
+}
+:root {
+    --beige: #f5f0e1;
+    --dark-brown: #5e4429;
+    --light-brown: #c0a27e;
+    --primary-bg: #f3e9dd;
+    --secondary-bg: #d1bfa6;
+    --text-color: #5f4b32;
+    --highlight-color: #a68b73;
+    --icon-bg: #bca18a;
+    --icon-hover: #8d6e57;
+}
+
+.guides-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.guide-card {
+    background-color: var(--beige);
+    border: 1px solid var(--light-brown);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px; /* Increase width for wider cards */
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.guide-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.guide-photo {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.guide-name {
+    font-size: 1.1em;
+    color: var(--dark-brown);
+    margin-bottom: 10px;
+}
+
+.guide-location,
+.guide-price,
+.guide-rating {
+    font-size: 0.9em;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.guide-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.guide-languages {
+    font-size: 0.9em;
+    color: var(--highlight-color); 
+    margin-bottom: 8px;
+}
+
+.guide-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 30px; /* Apply more curve to the buttons */
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.profile-btn {
+    background-color: var(--highlight-color);
+    color: white;
+    border-radius: 10PX;
+}
+
+.profile-btn:hover {
+    background-color: var(--dark-brown);
+}
+
+.chat-btn {
+    background-color: var(--icon-bg);
+    color: white;
+    border-radius: 10PX;
+}
+
+.chat-btn:hover {
+    background-color: var(--icon-hover);
+}
+.navv{
+    top: 0 !important;
+
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .navbar .nav-link {
+        padding: 0.5rem;
+        font-size: 0.9em;
+    }
+
+    .guides-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .guide-card {
+        width: auto;
+        padding: 10px;
+    }
+
+    .guide-photo {
+        height: 120px;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .nav-link {
+        font-size: 0.8em;
+    }
+
+    .guides-container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .guide-card {
+        padding: 8px;
+    }
+
+    .guide-photo {
+        height: 100px;
+    }
+
+    button {
+        padding: 5px 8px;
+        font-size: 0.75em;
+    }
+}
+
